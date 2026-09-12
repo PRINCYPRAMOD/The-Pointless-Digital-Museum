@@ -1,4 +1,4 @@
-﻿<img width="1280" height="640" alt="The Pointless Digital Museum" src="./screenshots/landing_page.jpeg" />
+﻿<img width="1280" height="640" alt="The Pointless Digital Museum" src="./screenshots/screenshot1.png" />
 
 
 
@@ -58,14 +58,14 @@ http://localhost:3000
 For Software:
 
 # Screenshots (Add at least 3)
-![Landing Page](./screenshots/landing_page.jpeg)
-*The Grand Entrance & Landing Page with gold typography and animated dust particles*
+![Landing Page](./screenshots/screenshot1.png)
+*The Grand Entrance & Landing Page with gold typography, animated dust particles, and the emblem ring*
 
-![Grand Entry Hall](./screenshots/museum_view.jpeg)
-*360° Grand Entry Hall featuring classical columns, interactive reception bell, and The Overthinker statue with pixel sunglasses*
+![Grand Entry Hall](./screenshots/screenshot2.png)
+*360° Grand Entry Hall featuring classical columns, interactive reception bell, laser tripwires, and classical statues*
 
-![The Permanent Collection](./screenshots/landing_page.jpeg)
-*The Permanent Collection with ultra-clear glass display cases, rotating 3D exhibits, and Close-Up Inspection Mode*
+![The Permanent Collection](./screenshots/screenshot3.png)
+*The Permanent Collection room featuring crystal-clear glass display cases, rotating 3D exhibits, and Close-Up Inspection Mode*
 
 # Diagrams
 ```
