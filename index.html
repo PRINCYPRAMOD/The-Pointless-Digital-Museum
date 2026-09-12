@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>The Pointless Digital Museum — 360° Luxury Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ════════════════════ LANDING PAGE ════════════════════ -->
+<div id="landing">
+  <div id="grain-overlay"></div>
+  <div id="dust-container"></div>
+  <div id="hero">
+    <div id="emblem">
+      <div id="emblem-ring"></div>
+      <div id="emblem-icon">&#127963;</div>
+    </div>
+    <div class="gold-rule"></div>
+    <h1 id="museum-title">
+      <span>THE POINTLESS</span>
+      <span>DIGITAL MUSEUM</span>
+    </h1>
+    <div class="gold-rule thin"></div>
+    <p class="tagline main">"Celebrating everything that serves no purpose&#8230;<br>except making you question your life choices."</p>
+    <p class="tagline sub">"Admission is free. Your time, however, is not."</p>
+    <button id="enter-btn">ENTER THE MUSEUM &nbsp;&#8594;</button>
+    <p id="landing-footer">Est. 2024 &nbsp;&#183;&nbsp; A Cultural Institution of No Cultural Value &nbsp;&#183;&nbsp; Open 24/7</p>
+  </div>
+</div>
+
+<!-- ════════════════════ 3D MUSEUM ════════════════════ -->
+<div id="museum-container">
+  <canvas id="museum-canvas"></canvas>
+  <div id="crosshair"></div>
+
+  <!-- Top Bar: Location + Sound FX Toggle + Audio Guide + Visitor Counter -->
+  <div id="top-bar">
+    <div id="location-badge">
+      <span id="location-icon">&#127963;</span>
+      <span id="location-name">Grand Entry Hall</span>
+    </div>
+    
+    <div class="top-controls-group">
+      <button id="sound-btn" class="top-btn" title="Toggle Sound Effects (SFX)">
+        <span id="sound-icon">🔊</span>
+        <span id="sound-label">SOUND: ON</span>
+      </button>
+
+      <button id="audio-btn" class="top-btn" title="Toggle Pretentious Audio Commentary">
+        <span id="audio-icon">&#127911;</span>
+        <span id="audio-label">AUDIO GUIDE: ON</span>
+      </button>
+    </div>
+
+    <div id="visitor-counter">
+      <span class="counter-label">VISITORS CONFUSED:</span>
+      <span id="counter-val">142,857</span>
+    </div>
+  </div>
+
+  <!-- Close-Up Mode Overlay Header -->
+  <div id="close-up-banner">
+    <span id="close-up-title">🔍 CLOSE-UP INSPECTION MODE</span>
+    <button id="close-up-back-btn">&#8592; RETURN TO GALLERY</button>
+  </div>
+
+  <!-- Interactive Entrance Features HUD -->
+  <div id="entrance-hud">
+    <button class="entry-feature-btn" id="btn-bell" title="Ring Service Bell">
+      <span>🛎️</span> Ring Service Bell
+    </button>
+    <button class="entry-feature-btn" id="btn-complaint" title="Submit a Complaint">
+      <span>🗑️</span> Complaints Box
+    </button>
+    <button class="entry-feature-btn" id="btn-statue-list" title="View 10 Classical Statues">
+      <span>🏛️</span> 10 Classical Statues
+    </button>
+  </div>
+
+  <!-- Navigation controls -->
+  <div id="nav-controls">
+    <button class="nav-btn" id="btn-prev">&#8592; PREV</button>
+    <div id="nav-center">
+      <span id="nav-label">EXPLORE</span><br>
+      <span id="view-counter">1 / 8</span>
+    </div>
+    <button class="nav-btn" id="btn-next">NEXT &#8594;</button>
+  </div>
+
+  <!-- Minimap -->
+  <div id="minimap">
+    <div class="mm-header">MUSEUM FLOOR PLAN</div>
+    <div class="mm-rooms">
+      <div class="mm-room active" id="mm-0"><span>&#127963;</span><span>Grand Hall</span></div>
+      <div class="mm-arrow">&#8594;</div>
+      <div class="mm-room" id="mm-1"><span>&#128444;</span><span>Collection & Statues</span></div>
+    </div>
+    <div class="mm-you">&#9650; YOU ARE HERE</div>
+  </div>
+
+  <!-- Exhibit info panel -->
+  <div id="exhibit-panel">
+    <button id="panel-close" title="Close Panel">&#10005;</button>
+    <div id="panel-exhibit-num">EXHIBIT 001</div>
+    <h2 id="panel-name">&#8212;</h2>
+    <div class="panel-rule"></div>
+    <div id="panel-stats"></div>
+    <p id="panel-desc"></p>
+    
+    <div id="uselessness-row">
+      <span class="u-label">USELESSNESS</span>
+      <div id="u-bar-bg"><div id="u-bar-fill"></div></div>
+      <span id="u-value">0%</span>
+    </div>
+
+    <div class="panel-actions">
+      <button id="inspect-btn">🔍 INSPECT CLOSE-UP</button>
+      <button id="why-btn">WHY DOES THIS EXIST?</button>
+    </div>
+    <p id="why-answer"></p>
+  </div>
+
+  <!-- Statue Inspection Modal -->
+  <div id="statue-modal">
+    <button id="statue-close" title="Close">&#10005;</button>
+    <div class="statue-tag">🏛️ CLASSICAL MARBLE STATUARY</div>
+    <h2 id="statue-title">THE THINKER</h2>
+    <div class="statue-sub" id="statue-sub">DEEP THOUGHTS \u2014 NO SOLUTIONS</div>
+    <div class="statue-bubble-box" id="statue-bubble-text">"Overthinking since 300 BC. Still useless."</div>
+    <p id="statue-desc"></p>
+    <div class="statue-quote" id="statue-quote"></div>
+  </div>
+
+  <!-- Easter egg notification toast -->
+  <div id="easter-toast"></div>
+
+  <!-- Audio speech bubble / transcript -->
+  <div id="docent-bubble">
+    <div class="docent-head">🎧 MUSEUM DOCENT SPEAKS:</div>
+    <div id="docent-text">"Welcome, distinguished connoisseur of nothingness..."</div>
+  </div>
+
+  <!-- Interactive Hint -->
+  <div id="drag-hint">
+    <span>&#128433; Drag to look 360° &nbsp;|&nbsp; Click statues & exhibits to inspect up close</span>
+  </div>
+
+  <!-- Loading overlay -->
+  <div id="museum-loading">
+    <div id="loading-emblem">&#127963;</div>
+    <p id="loading-text">Preparing classical marble masterworks&#8230;</p>
+    <div id="loading-track"><div id="loading-fill"></div></div>
+    <p id="loading-note">Sculpting 2,000 years of pointless overthinking.</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
