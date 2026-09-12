@@ -1,4 +1,4 @@
-<img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
+﻿<img width="1280" height="640" alt="The Pointless Digital Museum" src="./screenshots/landing_page.jpeg" />
 
 
 
@@ -37,8 +37,8 @@ For Hardware:
 For Software:
 # Installation
 ```bash
-git clone https://github.com/your-username/the-pointless-digital-museum.git
-cd PointlessMuseumWeb
+git clone https://github.com/PRINCYPRAMOD/The-Pointless-Digital-Museum.git
+cd The-Pointless-Digital-Museum
 ```
 
 # Run
@@ -58,13 +58,13 @@ http://localhost:3000
 For Software:
 
 # Screenshots (Add at least 3)
-![Landing Page](https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd)
+![Landing Page](./screenshots/landing_page.jpeg)
 *The Grand Entrance & Landing Page with gold typography and animated dust particles*
 
-![Grand Entry Hall](https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd)
+![Grand Entry Hall](./screenshots/museum_view.jpeg)
 *360° Grand Entry Hall featuring classical columns, interactive reception bell, and The Overthinker statue with pixel sunglasses*
 
-![The Permanent Collection](https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd)
+![The Permanent Collection](./screenshots/landing_page.jpeg)
 *The Permanent Collection with ultra-clear glass display cases, rotating 3D exhibits, and Close-Up Inspection Mode*
 
 # Diagrams
